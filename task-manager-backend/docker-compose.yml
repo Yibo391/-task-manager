@@ -1,0 +1,10 @@
+version: '3'
+services:
+  frontend:
+    build: /Users/yibo/Downloads/Yibo/task-manager-frontend
+    ports:
+      - "3000:3000"
+  backend:
+    build: /Users/yibo/Downloads/Yibo/task-manager-backend
+    ports:
+      - "8080:8080"

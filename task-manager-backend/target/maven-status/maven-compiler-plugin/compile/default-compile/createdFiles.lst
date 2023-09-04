@@ -1,0 +1,8 @@
+com/taskmanager/controller/UserController.class
+com/taskmanager/service/TaskService.class
+com/taskmanager/model/User.class
+com/taskmanager/model/Task.class
+com/taskmanager/controller/TaskController.class
+com/taskmanager/Task.class
+com/taskmanager/service/UserService.class
+com/taskmanager/TaskController.class
