@@ -1,24 +1,27 @@
 package com.taskmanager.service;
 
 import com.taskmanager.model.Task;
+import com.taskmanager.repository.TaskRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Service
 public class TaskService {
 
-    private List<Task> tasks = new ArrayList<>();
-    private Long nextId = 1L;
+    @Autowired
+    private TaskRepository taskRepository;
 
     public List<Task> listTasks() {
-        return tasks;
+        return taskRepository.findAll();
     }
 
     public Task createTask(Task task) {
-        task.setId(nextId++);
-        tasks.add(task);
-        return task;
+        return taskRepository.save(task);
+    }
+
+    public void deleteTask(Long id) {
+        taskRepository.deleteById(id);
     }
 }

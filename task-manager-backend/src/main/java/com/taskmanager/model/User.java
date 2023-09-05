@@ -1,12 +1,15 @@
 package com.taskmanager.model;
 
-public class User {
-    private Long id;
-    private String username;
-    private String password;
-    private String email;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
-    // Getters and Setters
+@Entity
+public class User {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
     public Long getId() {
         return id;
@@ -39,4 +42,11 @@ public class User {
     public void setEmail(String email) {
         this.email = email;
     }
+
+    private String username;
+    private String password;
+    private String email;
+
+    // Getters and Setters
+    // ...
 }
